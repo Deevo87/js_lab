@@ -1,0 +1,86 @@
+:root {
+    --text-color-initial: red;
+    --text-color-final: green;
+}
+
+aside  {
+    width: 46%;
+    position: relative;
+    top: -5rem;
+    float: right;
+}
+
+footer {
+    margin-top: 1rem;
+}      
+
+header {
+/* Specyfikacja wyglądu */
+}     
+
+main { 
+    width: 40%;
+}
+
+nav {
+}
+
+nav ul {
+    padding-left: 3rem;
+    width: fit-content;
+}
+
+nav li {
+}
+
+.azure {
+    background-color: #EFF;
+    border: 2px solid #A8A8A8;
+    padding: 0.75rem;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+h1 {
+    margin: 0;
+    animation: colorChange 3s infinite;
+}
+
+.navigation {
+    padding-left: 3rem;
+    width: 5rem;
+}
+
+@keyframes colorChange {
+    0% {color: var(--text-color-initial);}
+    25% {color: var(--text-color-final);}
+    50% {color: var(--text-color-final);}
+    75% {color: var(--text-color-initial);}
+    100% {color: var(--text-color-initial);}
+}
+
+@media screen and (max-width: 900px){
+    body {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .azure {
+        width: auto;
+    }
+
+    aside {
+        position: none;
+        top: auto;
+        float: none;
+        padding: none;
+        /* width: auto; */
+    }
+
+    main {
+        width: auto;
+        margin-top: 1rem;
+    }
+}
