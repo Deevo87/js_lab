@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="zadanie1.js" defer></script>
+</head>
+<body>
+    <form oninput="wynik.value = pole_tekstowe.value + pole_liczbowe.value">
+        <input id="pole_tekstowe" placeholder="Wprowadź tekst" type="text">
+        +
+        <input id="pole_liczbowe" type="number" placeholder="Wprowadź liczbę">    
+        =
+        <output name="wynik" for="pole_tekstowe pole_liczbowe">Tu pojawi się wynik obliczeń</output>    
+        <br>    
+        <input type="button" value="Wypisz" onclick="saveInputs()">
+    </form>
+</body>
+</html>
