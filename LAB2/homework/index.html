@@ -89,29 +89,50 @@
             </div>
         </div>
       </div>
-      <div class="middle">
-        <div class="card">
-          <img class="card-img-top left_img" src="resources/kredyt.jpeg">
-          <div class="card-body">
-            <h5 class="card-title">Kredyty</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="middle">
+          <div class="card">
+            <img class="card-img-top left_img" src="resources/kredyt.jpeg">
+            <div class="card-body">
+              <h5 class="card-title">Kredyty</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top left_img" src="resources/lokaty.jpeg">
+            <div class="card-body">
+              <h5 class="card-title">Lokaty</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <img class="card-img-top left_img" src="resources/lokaty.jpeg">
-          <div class="card-body">
-            <h5 class="card-title">Lokaty</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <form>
+          <ul class="list-group">
+            <li class="list-group-item disabled">Dostępne komendy:</li>
+            <li class="list-group-item">New account [first_name] [last_name] [email] [customer_img] [type] [balance] - założenie nowego konta</li>
+            <li class="list-group-item">[client_id] Open subaccount [type] - otwarcie nowego subkonta</li>
+            <li class="list-group-item">[client_id] Transfer to [subaccount_name] [amount] - przelew na podane subkonto podanej kwoty</li>
+            <li class="list-group-item">[client_id] Withdrawal [amount] from [subaccount_name] - wypłata z podanego subkonta podanej kwoty</li>
+            <li class="list-group-item">[client_id] Bank balance - wykaz wszytstkich subkont</li>
+          </ul>
+          <div class="mb-3 cmd">
+            <textarea class="form-control" id="cmd_input" rows="3"></textarea>
           </div>
+          <div class="feedback-msg"></div>
+        </form>
+        <input class="btn btn-primary submit-btn" type="submit" value="Submit">
+        <div class="chart-coint">
+          <canvas class="bank-balance"></canvas>
         </div>
-      </div>
-      </div>
+        
     </div>
+
     <footer class="footer mt-auto py-1 bg-light sticky-bottom">
       <p class="footer_p">
       InformatykaAGH
       </p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
           crossorigin="anonymous"></script>

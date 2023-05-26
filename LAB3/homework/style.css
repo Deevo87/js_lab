@@ -69,11 +69,6 @@ p {
     height: 100%;
 }
 
-/* .btn_biznes {
-    position: relative;
-    bottom: -1rem;
-} */
-
 /* middle section */
 .middle {
     display: flex;
@@ -148,6 +143,23 @@ form {
     width: 40%;
     margin: auto;
     text-align: center;
+}
+
+.chart-coint {
+    margin-top: 2rem;
+    background-color: whitesmoke;
+}
+
+.login {
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+    background-color: white;
+    padding: 1rem;
+}
+
+.login-btn {
+    width: 100%;
 }
 
 @keyframes left {

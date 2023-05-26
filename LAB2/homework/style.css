@@ -69,11 +69,6 @@ p {
     height: 100%;
 }
 
-/* .btn_biznes {
-    position: relative;
-    bottom: -1rem;
-} */
-
 /* middle section */
 .middle {
     display: flex;
@@ -122,6 +117,37 @@ footer {
 
 .biznesman:hover {
     animation: left 2s;
+}
+
+form {
+    margin: auto;
+    width: 100%;
+}
+
+.list-group {
+    margin: auto;
+    width: 70%;
+    padding: 3rem 0 3rem 0;
+}
+
+.cmd {
+    margin: auto;
+    width: 50%;
+}
+
+.btn {
+    width: 100%;
+}
+
+.feedback-msg {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+.chart-coint {
+    margin-top: 2rem;
+    background-color: whitesmoke;
 }
 
 @keyframes left {
