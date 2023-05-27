@@ -1,0 +1,191 @@
+[
+  {
+    "clientId": 1,
+    "login": "johndoe",
+    "password": "johndoe123",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "123456789",
+    "address": "123 Main Street, Anytown, USA",
+    "account": {
+      "accountId": 1,
+      "type": "bussines",
+      "balance": 10000,
+      "subaccounts": [
+        {
+          "subaccountId": 1,
+          "currency": "USD",
+          "balance": 1000
+        },
+        {
+          "subaccountId": 2,
+          "currency": "EUR",
+          "balance": 2000
+        }
+      ]
+    }
+  },
+  {
+    "clientId": 2,
+    "login": "alicesmith",
+    "password": "alicesmith123",
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "email": "alice.smith@example.com",
+    "phone": "987654321",
+    "address": "456 Oak Avenue, Anycity, USA",
+    "account": {
+      "accountId": 2,
+      "type": "bussines",
+      "balance": 10000,
+      "subaccounts": [
+        {
+          "subaccountId": 1,
+          "currency": "USD",
+          "balance": 1000
+        }
+      ]
+    }
+  },
+  {
+    "clientId": 3,
+    "login": "michaeljohnson",
+    "password": "michaeljohnson123",
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "email": "michael.johnson@example.com",
+    "phone": "555555555",
+    "address": "789 Elm Street, Anyville, USA",
+    "account": {
+      "accountId": 3,
+      "type": "bussines",
+      "balance": 10000,
+      "subaccounts": [
+        {
+          "subaccountId": 1,
+          "currency": "USD",
+          "balance": 1000
+        },
+        {
+          "subaccountId": 2,
+          "currency": "PLN",
+          "balance": 5000
+        },
+        {
+          "subaccountId": 3,
+          "currency": "EUR",
+          "balance": 3000
+        }
+      ]
+    }
+  },
+  {
+    "clientId": 4,
+    "login": "emilybrown",
+    "password": "emilybrown123",
+    "firstName": "Emily",
+    "lastName": "Brown",
+    "email": "emily.brown@example.com",
+    "phone": "444444444",
+    "address": "321 Maple Road, Anycity, USA",
+    "account": {
+      "accountId": 4,
+      "type": "bussines",
+      "balance": 10000,
+      "subaccounts": [
+        {
+          "subaccountId": 1,
+          "currency": "USD",
+          "balance": 1000
+        }
+      ]
+    }
+  },
+  {
+    "clientId": 5,
+    "login": "danielwilson",
+    "password": "danielwilson123",
+    "firstName": "Daniel",
+    "lastName": "Wilson",
+    "email": "daniel.wilson@example.com",
+    "phone": "777777777",
+    "address": "555 Pine Street, Anytown, USA",
+    "account": {
+      "accountId": 5,
+      "type": "bussines",
+      "balance": 10000,
+      "subaccounts": [
+        {
+          "subaccountId": 1,
+          "currency": "USD",
+          "balance": 1000
+        },
+        {
+          "subaccountId": 2,
+          "currency": "PLN",
+          "balance": 2000
+        },
+        {
+          "subaccountId": 3,
+          "currency": "EUR",
+          "balance": 3000
+        }
+      ]
+    }
+  },
+  {
+    "clientId": 6,
+    "login": "oliviadavis",
+    "password": "oliviadavis123",
+    "firstName": "Olivia",
+    "lastName": "Davis",
+    "email": "olivia.davis@example.com",
+    "phone": "222222222",
+    "address": "777 Cedar Avenue, Anyville, USA",
+    "account": {
+      "accountId": 6,
+      "type": "bussines",
+      "balance": 10000,
+      "subaccounts": [
+        {
+          "subaccountId": 1,
+          "currency": "USD",
+          "balance": 1000
+        },
+        {
+          "subaccountId": 2,
+          "currency": "EUR",
+          "balance": 2000
+        },
+        {
+          "subaccountId": 3,
+          "currency": "PLN",
+          "balance": 3000
+        }
+      ]
+    }
+  },
+  {
+    "clientId": 7,
+    "login": "williamanderson",
+    "password": "williamanderson123",
+    "firstName": "William",
+    "lastName": "Anderson",
+    "email": "william.anderson@example.com",
+    "phone": "999999999",
+    "address": "999 Oak Street, Anycity, USA",
+    "account": {
+      "accountId": 7,
+      "type": "bussines",
+      "balance": 10000,
+      "subaccounts": [
+        {
+          "subaccountId": 1,
+          "currency": "USD",
+          "balance": 1000
+        }
+      ]
+    }
+  }
+]

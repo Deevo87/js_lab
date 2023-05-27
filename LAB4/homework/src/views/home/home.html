@@ -13,13 +13,13 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet"
-          href="style.css"
+          href="home.css"
           media="screen"
           type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>
-      Tytuł strony / Page tile
+      home
     </title>
   </head>
   <body>
@@ -123,25 +123,50 @@
           </div>
         </div>
 
-        <form>
-          <ul class="list-group">
-            <li class="list-group-item disabled">Dostępne komendy:</li>
-            <li class="list-group-item">New account [first_name] [last_name] [email] [customer_img] [type] [balance] - założenie nowego konta</li>
-            <li class="list-group-item">[client_id] Open subaccount [type] - otwarcie nowego subkonta</li>
-            <li class="list-group-item">[client_id] Transfer to [subaccount_name] [amount] - przelew na podane subkonto podanej kwoty</li>
-            <li class="list-group-item">[client_id] Withdrawal [amount] from [subaccount_name] - wypłata z podanego subkonta podanej kwoty</li>
-            <li class="list-group-item">[client_id] Bank balance - wykaz wszytstkich subkont</li>
-          </ul>
-          <div class="mb-3 cmd">
-            <textarea class="form-control" id="cmd_input" rows="3"></textarea>
+        <!-- FORM -->
+        <form class="mt-5" method="POST" id="transfer_form" action="/">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-6">
+                <div class="form-group row mb-4">
+                  <label for="amount" class="col-sm-4 col-form-label">Kwota</label>
+                  <div class="col-sm-8">
+                    <input type="number" class="form-control" id="amount" placeholder="Kwota" name="amount" value="amount">
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <div class="col-sm-6 mx-auto">
+                    <label class="my-1 mr-2" for="accountsType">Rodzaj konta</label>
+                    <select class="custom-select my-1 mr-sm-2 w-100" id="accountsType" name="accountType">
+                      <option selected>Wybierz</option>
+                      <option value="bussines">Biznesowe</option>
+                      <option value="private">Prywatne</option>
+                      <option value="savings">Oszczędnościowe</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 mx-auto">
+                    <label class="my-1 mr-2" for="subaccounts">Rodzaj subkonta</label>
+                    <select class="custom-select my-1 mr-sm-2 w-100" id="subaccounts" name="subaccountType">
+                      <option selected>Wybierz</option>
+                      <option value="USD">USD</option>
+                      <option value="PLN">PLN</option>
+                      <option value="EUR">EUR</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 withdraw">
+                    <button type="submit" name="action" value="withdraw_btn" class="btn btn-primary btn-block">Wypłać</button>
+                  </div>
+                  <div class="col-sm-6 deposit">
+                    <button type="submit"  name="action" value="deposit_btn" class="btn btn-primary btn-block">Wpłać</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="feedback-msg"></div>
         </form>
-        <input class="btn btn-primary submit-btn" type="submit" value="Submit">
-        <div class="chart-coint">
-          <canvas class="bank-balance"></canvas>
-        </div>
-        
+    <!-- END FORM -->
     </div>
 
     <footer class="footer mt-auto py-1 bg-light sticky-bottom">
@@ -154,6 +179,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
           crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="home.js"></script>
   </body>
 </html>
