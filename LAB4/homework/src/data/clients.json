@@ -11,12 +11,12 @@
     "account": {
       "accountId": 1,
       "type": "bussines",
-      "balance": 9600,
+      "balance": 9800,
       "subaccounts": [
         {
           "subaccountId": 1,
           "currency": "USD",
-          "balance": 1400
+          "balance": 1200
         },
         {
           "subaccountId": 2,

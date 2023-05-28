@@ -17,21 +17,13 @@ const requestListener = (request, response) => {
       url.pathname === "/home.js") &&
     request.method === "GET"
   ) {
-    actions.loadTemplate(
-      request,
-      response,
-      "C:/Users/rafal/OneDrive/Pulpit/4_semestr/js/LAB4/homework/src"
-    );
+    actions.loadTemplate(request, response, "./");
   } else if (
     (url.pathname.endsWith(".jpg") || url.pathname.endsWith(".jpeg")) &&
     request.method === "GET"
   ) {
-    actions.loadImg(
-      request,
-      response,
-      "C:/Users/rafal/OneDrive/Pulpit/4_semestr/js/LAB4/homework/src"
-    );
-  } else if (url.pathname === "/" && request.method === "POST") {
+    actions.loadImg(request, response, "./");
+  } else if (url.pathname === "/transfer" && request.method === "POST") {
     let buffer = "";
 
     request.on("data", (chunk) => {
@@ -42,6 +34,21 @@ const requestListener = (request, response) => {
       const parsed = new URLSearchParams(buffer);
       actions.performTransfer(request, response, parsed);
     });
+  } else if (url.pathname === "/login" && request.method === "POST") {
+    let buffer = "";
+
+    request.on("data", (chunk) => {
+      buffer += chunk;
+    });
+
+    request.on("end", () => {
+      const parsed = new URLSearchParams(buffer);
+      actions.login(request, response, parsed);
+    });
+  } else if (url.pathname === "/invalid-data") {
+    actions.loadTemplate(request, response, "./");
+  } else if (url.pathname === "/passed") {
+    actions.loadTemplate(request, response, "./");
   }
 };
 

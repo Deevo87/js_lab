@@ -11,7 +11,11 @@ export const loadTemplate = (request, response, src_path) => {
     response.end();
   } else if (url.endsWith(".css") || url.endsWith(".js")) {
     template_path = path.join(src_path, "views/home", url);
-  } else if (url === "/") {
+  } else if (url === "/invalid-data") {
+    template_path = path.join(src_path, "views/invalid-data/invalid-data.html");
+  } else if (url === "/passed") {
+    template_path = path.join(src_path, "views/passed/passed.html");
+  } else {
     template_path = path.join(src_path, "views/home/home.html", url);
   }
 
@@ -78,6 +82,12 @@ const saveJSON = (toSave) => {
 
 export const performTransfer = async (request, response, parsed) => {
   console.log(parsed);
+
+  if (parseInt(parsed.amount) <= 0) {
+    console.error("Amount can not be negative or equal to 0.");
+    throw error;
+  }
+
   const db = await connectToDB()
     .then((data) => {
       return data;
@@ -102,7 +112,7 @@ const withdraw = (request, response, parsed, db) => {
   if (db[0].account.type !== parsed.get("accountType")) {
     console.error(
       "You do not have account of given type: ",
-      parsed.get(accountType)
+      parsed.get("accountType")
     );
     return;
   }
@@ -137,7 +147,6 @@ const deposit = (request, response, parsed, db) => {
     console.log(subaccount, parsed.get("subaccountType"));
     if (subaccount.currency === parsed.get("subaccountType")) {
       if (subaccount.balance - amount >= 0) {
-        console.log("co do chuja");
         subaccount.balance -= amount;
         exist = true;
         return;
@@ -155,4 +164,24 @@ const deposit = (request, response, parsed, db) => {
 
   db[0].account.balance += amount;
   saveJSON(db);
+};
+
+export const login = async (request, response, parsed) => {
+  console.log(parsed);
+  const db = await connectToDB();
+  console.log(db[0].password);
+  if (db[0].password !== parsed.get("password")) {
+    console.error("Invalid password.");
+    response.writeHead(302, { Location: "/invalid-data" });
+    response.end();
+    return;
+  }
+
+  if (db[0].email !== parsed.get("email")) {
+    console.error("Invalid user name.");
+    return;
+  }
+
+  response.writeHead(302, { Location: "/passed" });
+  response.end();
 };
