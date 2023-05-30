@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        title Second Express application
+    body
+        main
+            if mode 
+                h1 Second Express application
+                form(method='GET' action='/faculty')
+                    label(for='faculty') Give your faculty
+                    input(name='faculty')
+                    br
+                    input(type='submit')
+                    input(type='reset')
+                img(src="/img/sigma.jpeg", alt="sigma")
+                
+            else
+                h1 Second Express application
+                form(method='POST' action='/')
+                    label(for='name') Give your name
+                    input(name='name')
+                    br
+                    input(type='submit')
+                    input(type='reset')
+                img(src="/img/sigma.jpeg", alt="sigma")
+
+            if mode 
+                h1 Students
+                    table 
+                        tr 
+                            th Nazwisko 
+                            th Imię
+                            th Wydział
+                        each student in students 
+                            tr 
+                                td= student.lname 
+                                td= student.fname
+                                td= student.faculty
+            else
+                h1 Tablica
+                    table 
+                        tr 
+                            th Nazwisko 
+                            th Imię
+                        each person in table 
+                            tr 
+                                td= person.lname 
+                                td= person.fname

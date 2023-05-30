@@ -1,7 +1,7 @@
-import express from 'express';
-import morgan from 'morgan';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import express from "express";
+import morgan from "morgan";
+import path from "path";
+import { fileURLToPath } from "url";
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -9,18 +9,19 @@ const __dirname = path.dirname(__filename);
 /* ********************************************** */
 /* Determining the contents of the middleware stack *
 /* ********************************************** */
-app.use(morgan('dev')); // Place an HTTP request recorder on the stack — each request will be logged in the console in 'dev' format
-app.use(express.static(__dirname + '/public')); // Place the built-in middleware 'express.static' — static content (files .css, .js, .jpg, etc.) will be provided from the 'public' directory
-app.use(express.urlencoded({ extended: false })); 
+app.use(morgan("dev")); // Place an HTTP request recorder on the stack — each request will be logged in the console in 'dev' format
+app.use(express.static(__dirname + "/public")); // Place the built-in middleware 'express.static' — static content (files .css, .js, .jpg, etc.) will be provided from the 'public' directory
+app.use(express.urlencoded({ extended: false }));
 /* ****** */
 /* "Routes" */
 /* ****** */
 /* ---------------- */
 /* Route "GET('/')" */
 /* ---------------- */
-app.get('/', function (request, response) {
-   // Generating the form if the relative URL is '/', and the GET method was used to send data to the server'
-   response.send(`
+app.get("/", function (request, response) {
+  // Generating the form if the relative URL is '/', and the GET method was used to send data to the server'
+  console.log(__dirname + "/public");
+  response.send(`
    <!DOCTYPE html>
    <html lang="en">
       <head>
@@ -38,7 +39,7 @@ app.get('/', function (request, response) {
                <input type="submit">
                <input type="reset">
             </form>
-            <img src = "/img/wwe.png" alt = "wwe" width='200' height='200'>
+            <img src = "/img/sigma.jpeg" alt = "wwe" width='200' height='200'>
          </main>
       </body>
    </html>   
@@ -47,27 +48,19 @@ app.get('/', function (request, response) {
 /* ---------------------- */
 /* Route "GET('/submit')" */
 /* ---------------------- */
-app.get('/submit', function (request, response) {
-   // Processing the form content, if the relative URL is '/submit', and the GET method was used to send data to the server'
-   /* ************************************************ */
-   // Setting an answer header — we inform the browser that the returned data is plain text
-   response.set('Content-Type', 'text/plain')
-   /* ************************************************ */
-   // Place given data (here: 'Hello <name>') in the body of the answer
-   response.send(`Hello ${request.query.name}`); // Send a response to the browser
+app.get("/submit", function (request, response) {
+  response.set("Content-Type", "text/plain");
+  response.send(`Hello ${request.query.name}`); // Send a response to the browser
 });
 /* ********************************************** */
 
-
-app.post('/', function (request, response) {
-    response.set('Content-Type', 'text/plain');
-    response.send(`Hello ${request.body.name}`);
+app.post("/", function (request, response) {
+  response.set("Content-Type", "text/plain");
+  response.send(`Hello ${request.body.name}`);
 });
-
-
 
 // The application is to listen on port number 8000
 app.listen(8000, function () {
-   console.log('The server was started on port 8000');
-   console.log('To stop the server, press "CTRL + C"');
+  console.log("The server was started on port 8000");
+  console.log('To stop the server, press "CTRL + C"');
 });
