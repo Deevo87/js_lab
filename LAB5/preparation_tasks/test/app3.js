@@ -54,7 +54,7 @@ app.get("/faculty", async function (request, response) {
 
 /* ************************************************ */
 
-app.listen(8002, function () {
+app.listen(8000, function () {
   console.log("The server was started on port 8000");
   console.log('To stop the server, press "CTRL + C"');
 });

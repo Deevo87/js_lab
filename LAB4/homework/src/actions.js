@@ -1,5 +1,5 @@
 import http from "http";
-import fs, { writeFile } from "fs";
+import fs, { copyFileSync, writeFile } from "fs";
 import path, { parse, resolve } from "path";
 import { error } from "console";
 
