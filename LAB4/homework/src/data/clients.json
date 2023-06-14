@@ -2,7 +2,7 @@
   {
     "clientId": 1,
     "login": "johndoe",
-    "password": "johndoe123",
+    "password": "Johndoe123@",
     "firstName": "John",
     "lastName": "Doe",
     "email": "john.doe@example.com",
@@ -11,12 +11,12 @@
     "account": {
       "accountId": 1,
       "type": "bussines",
-      "balance": 9800,
+      "balance": 10000,
       "subaccounts": [
         {
           "subaccountId": 1,
           "currency": "USD",
-          "balance": 1200
+          "balance": 1000
         },
         {
           "subaccountId": 2,
